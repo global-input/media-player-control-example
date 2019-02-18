@@ -5,8 +5,9 @@ Then, the global-input-app extension dependency is added:
 ```
 npm i @bit/globalinput.web.global-input-connect
 ```
+Then the [src/App.js](https://github.com/global-input/media-player-control-example/blob/master/src/App.js) is modified to implement the video player logic and the mobile logic for controlling the video player
 
-### `npm start`
+ git push --set-upstream origin master
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
