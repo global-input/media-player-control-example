@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Then, the global-input-app extension dependencies is added:
+Then, the global-input-app extension dependency is added:
 
 ```
 npm i @bit/globalinput.web.global-input-connect
