@@ -22,12 +22,9 @@ class App extends Component {
                   globalInputConnect:null,
                   sendMessage:(message, fieldid)=>{
                         if(this.mobile.globalInputConnect){
-
                               this.mobile.globalInputConnect.sendInputMessage(message,null,fieldid);
                         }
-                        else{
 
-                        }
                   },
                   config:{
                                 url:props.url,
