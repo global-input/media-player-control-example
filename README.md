@@ -13,9 +13,4 @@ Lastly run the app in the development mode using 'npm run' or 'yarn' command:<br
 npm run start
 ```
 
-And then install the [Global Input App](https://globalinput.co.uk/) on your mobile and scan the QR code displayed using the mobile app.
-
-
-
-
-
+And then scan the QR code displayed with your [Global Input App](https://globalinput.co.uk/) on your mobile.
