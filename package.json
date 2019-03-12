@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@bit/globalinput.web.global-input-connect": "0.0.6",
+    
+    "@bit/globalinput.web.text-button": "0.0.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2"
   },
