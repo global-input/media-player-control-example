@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import {styles} from './styles';
 
-import GlobalInputConnect from '@bit/globalinput.web.global-input-connect';
-import TextButton from '@bit/globalinput.web.text-button';
+import {GlobalInputConnect }from 'global-input-react';
+
 
 
 const textContent={
