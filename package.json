@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "global-input-react": "^2.0.4",
+    "global-input-react": "^2.0.6",
     "react": "^16.8.2",
-    "react-dom": "^16.8.2"
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "react-scripts": "2.1.5"
