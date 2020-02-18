@@ -8,12 +8,6 @@ import * as actions from './actions';
 import * as videoControl from './videoControl';
 import {Title} from './app-layout'; 
 
-
-
-
-
-
-
 export default () => {
   const videoPlayer=useRef(null);
 
