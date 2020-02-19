@@ -1,11 +1,10 @@
 ## Second Screen Experience
-This is an example React application that uses [Global Input App React Component](https://github.com/global-input/global-input-react) to implement mobile integrations that allows users to have second screen experience.
+This is an example React application that uses [the ReactJS library](https://github.com/global-input/global-input-react) to implement mobile integrations that allows users to have second screen experience.
 
-You may download the example and run 
+You may download the example and run the following command.
 ```
    yarn start
 ```
-and then you can use your mobile to operate on the application.
+Alternative, you may also try the [live running instance of this application](https://globalinput.co.uk/global-input-app/video-player). 
    
-
-* [Demo](https://globalinput.co.uk/global-input-app/video-player)
+There is also [a simpler example](https://github.com/global-input/content-transfer-example) for you to get started with [the ReactJS library](https://github.com/global-input/global-input-react)
