@@ -5,6 +5,5 @@ You may download the example and run the following command.
 ```
    yarn start
 ```
-Alternative, you may also try the [live running instance of this application](https://globalinput.co.uk/global-input-app/video-player). 
+You may also try the [live running instance of this application](https://globalinput.co.uk/global-input-app/video-player). 
    
-There is also [a simpler example](https://github.com/global-input/content-transfer-example) for you to get started with [the ReactJS library](https://github.com/global-input/global-input-react)
