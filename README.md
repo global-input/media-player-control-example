@@ -1,5 +1,5 @@
 ## Second Screen Experience
-This is the source code of [a demo application](https://globalinput.co.uk/global-input-app/video-player), demonstrating how you can use the [Global Input App library](https://github.com/global-input/global-input-react) to achieve [Second-screen](https://globalinput.co.uk/global-input-app/second-screen-experience) feature on a React.js application. The communication between the mobile and your application is secured using end-to-end encryption. 
+This is the source code of [an example](https://globalinput.co.uk/global-input-app/video-player)on using the [global-input-react](https://github.com/global-input/global-input-react) to introduce mobile interoperability into React applications running on smart devices like smart TVs, set-top boxes, game consoles, and devices in IoT, so that users can use their mobiles to operate on them.
 
 ### How to Run
 
