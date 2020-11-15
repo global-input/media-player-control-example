@@ -81,9 +81,9 @@ export const useMobile = (title: string, fields: globalInput.FormField[] | (() =
 
     ////dev-test codeData
 
-    const pairing = (<QRCodeContainer>
+    const pairing = (
         <mobile.PairingQR />
-    </QRCodeContainer>);
+    );
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const restart = useCallback(() => mobile.restart(), [mobile.restart]);
