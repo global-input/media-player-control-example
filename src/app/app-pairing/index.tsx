@@ -1,5 +1,5 @@
 import React from 'react';
-import { BasicLayout, FormContainer,FormFooter, TextButton, MessageContainer } from '../app-layout';
+import { BasicLayout, FormFooter, TextButton, MessageContainer } from '../app-layout';
 
 import { useMobile } from '../mobile';
 interface Props {
@@ -7,9 +7,14 @@ interface Props {
 }
 
 const AppPairing: React.FC<Props> = ({ back }) => {
-
-    const mobile = useMobile("Paring",Object.values(FIELDS));
-    mobile.setOnFieldChange(( field ) => {
+    const initData = {
+        form: {
+            title: "Pairing",
+            fields: Object.values(FIELDS)
+        }
+    }
+    const mobile = useMobile(initData);
+    mobile.setOnFieldChange((field) => {
         switch (field.id) {
             case FIELDS.back.id:
                 back();
@@ -22,14 +27,13 @@ const AppPairing: React.FC<Props> = ({ back }) => {
         <BasicLayout title="Pairing">
             <MessageContainer>
                 You need to pair your mobile app in order to be able to connect to your extension.
-            </MessageContainer>
+                </MessageContainer>
 
 
-            {mobile.pairing}
-
+            <mobile.PairingQR />
 
             <FormFooter>
-            <TextButton onClick={back} label='Done' />
+                <TextButton onClick={back} label='Done' />
             </FormFooter>
 
         </BasicLayout>

@@ -1,8 +1,6 @@
-import { useMobile, MobileInputData } from './mobile';
-
 export const initDataId = 'video-player';
 
-export const statusValue = (title:string, message:string) => {
+export const statusValue = (title: string, message: string) => {
     return {
         type: "view",
         style: {
@@ -94,21 +92,30 @@ export const fields = {
 };
 
 
-export const sendUI = (mobile:MobileInputData,title:string)=>{
-    mobile.sendFormFields(title,Object.values(fields),'','','',initDataId);
+export const initData = (title: string) => {
+    return {
+        id: initDataId,
+        form: {
+            title,
+            fields: Object.values(fields)
+        }
+    };
+
+
+
+}
+
+export const sendStatus = (mobile, title: string, message: string) => {
+    mobile.sendValue(fields.status.id, statusValue(title, message));
 };
 
-export const sendStatus = (mobile:MobileInputData,title:string, message:string) => {
-    mobile.sendValue(fields.status.id,statusValue(title,message));
+export const sendPlayButton = (mobile) => {
+    mobile.sendValue(fields.playPause.id, fields.playPause.options[0].value);
+};
+export const sendPauseButton = (mobile) => {
+    mobile.sendValue(fields.playPause.id, fields.playPause.options[1].value);
 };
 
-export const sendPlayButton= (mobile:MobileInputData)=>{
-    mobile.sendValue(fields.playPause.id,fields.playPause.options[0].value);
-};
-export const sendPauseButton= (mobile:MobileInputData)=>{
-    mobile.sendValue(fields.playPause.id,fields.playPause.options[1].value);
-};
-
-export const sendSliderValue= (mobile:MobileInputData,sliderValue) => {
-    mobile.sendValue(fields.slider.id,sliderValue);
+export const sendSliderValue = (mobile, sliderValue) => {
+    mobile.sendValue(fields.slider.id, sliderValue);
 };
