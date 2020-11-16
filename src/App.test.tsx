@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './app/VideoApp';
+import App from './app';
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: jest.fn().mockImplementation(query => ({
@@ -14,7 +14,7 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: jest.fn(),
   })),
 });
-test('renders learn react link', () => {
+test('renders app', () => {
   render(<App />);
   const linkElement = screen.getByText(/Second Screen Experience/i);
   expect(linkElement).toBeInTheDocument();
