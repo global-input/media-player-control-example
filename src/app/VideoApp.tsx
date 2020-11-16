@@ -208,7 +208,7 @@ const VideoApp: React.FC<Props> = ({ connectionSettings }) => {
         controls>
         <source src={videoData.video.mp4} type="video/mp4" />
       </video>
-      {mobile.isReady && (
+      {(!mobile.isConnected) && (
         <QRCodeContainer>
           <mobile.ConnectQR />
           <AppFooter>
