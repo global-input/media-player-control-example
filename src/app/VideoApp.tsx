@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 //+//import { useHistory } from 'react-router-dom'; ////website
-import { useMobile } from './mobile';
+import { useMobile, ConnectWindow } from './mobile';
 import * as videoControl from './videoControl';
 import { AppFooter, MessageButton, MessageLink, PageContainer, QRCodeContainer, P, useWindowSize, A } from './app-layout';
 import * as selectorUI from './selectorUI';
 import * as playerUI from './playerUI';
-//+//import * as mobileUI from '../../mobile-ui'; ////website
+//+//import * as mobileUI from '../../micro-apps/mobile-ui'; ////website
 
 interface Props {
   connectionSettings: () => void
@@ -15,7 +15,7 @@ const VideoApp: React.FC<Props> = ({ connectionSettings }) => {
   const [videoData, setVideoData] = useState(videoControl.getDefaultVideo());
   const videoPlayer = useRef(null);
 
-  const mobile = useMobile(() => selectorUI.initData(videoData.video.title, videoData.video.synopsis));
+  const mobile = useMobile(() => selectorUI.initData(videoData.video.title, videoData.video.synopsis), true);
 
   const onChangeVideoData = videoData => {
     videoControl.setPlayVideoSource(videoPlayer.current, videoData.video);
@@ -37,7 +37,7 @@ const VideoApp: React.FC<Props> = ({ connectionSettings }) => {
         onChangeVideoData(videoControl.getNextVideo(videoData));
         break;
       default:
-      //+//mobileUI.addField.onFieldChange(field,history)////website
+      //+//mobileUI.onFieldChange(field,history)////website
     }
 
     switch (mobile.initData.id === playerUI.initDataId && field.id) {
@@ -213,9 +213,8 @@ const VideoApp: React.FC<Props> = ({ connectionSettings }) => {
         controls>
         <source src={videoData.video.mp4} type="video/mp4" />
       </video>
-      <QRCodeContainer>
-        <mobile.ConnectQR />
-      </QRCodeContainer>
+      <ConnectWindow mobile={mobile}/>
+
 
 
 
