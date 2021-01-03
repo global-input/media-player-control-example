@@ -8,13 +8,14 @@ import type {InitData,ConnectOptions} from 'global-input-react';////global-input
 
 import * as storage from './storage';
 
-import {PAGES} from './pages';
+import {WidgetState, MobileData} from './commons';
 
-export const useMobile = (initData: InitData | (() => InitData), showWidgetOnStart=false) => {
+
+export const useMobile = (initData: InitData | (() => InitData), showWidgetOnStart=false,configId:string|number='default'):MobileData => {
     const [isShowWidget, setShowWidget] = useState(showWidgetOnStart);
-    const [configId, setConFigId] = useState(1);
-    const [page,setPage]=useState(PAGES.CONNECT_QR);
-    const connectionSettings = storage.loadConnectionSettings();
+    const [settingsConfig, setSettingsConfigId] = useState(1);
+    const [widgetState,setWidgetState]=useState(WidgetState.CONNECT_QR);
+    const connectionSettings:storage.ConnectionSettings = storage.loadConnectionSettings();
     const connectOptions: ConnectOptions = {
         url: connectionSettings.url,////use your own server"
         apikey: connectionSettings.apikey,
@@ -22,19 +23,19 @@ export const useMobile = (initData: InitData | (() => InitData), showWidgetOnSta
     };
     const mobile = useGlobalInputApp({
         initData, options:connectOptions, codeAES: connectionSettings.codeKey
-    }, isShowWidget, configId);
+    }, isShowWidget, `${settingsConfig}-${configId}`);
     ////dev-test codeData
     const {disconnect}=mobile;
     const onSaveSettings=useCallback((settings)=>{
         if (storage.saveConnectionSettings(settings)) {
-            setPage(PAGES.PAIRING);
+            setWidgetState(WidgetState.PAIRING);
         }
         else {
-            setPage(PAGES.CONNECT_QR);
+            setWidgetState(WidgetState.CONNECT_QR);
         }
-        setConFigId(configId => configId + 1);
+        setSettingsConfigId(configId => configId + 1);
         disconnect();
     },[disconnect]);
     const loadSettings=useCallback(()=>connectionSettings,[connectionSettings]);
-    return {...mobile,isShowWidget,onSaveSettings,loadSettings,page,setPage,setShowWidget};
+    return {...mobile,isShowWidget,onSaveSettings,loadSettings,widgetState,setWidgetState,setShowWidget};
 };
